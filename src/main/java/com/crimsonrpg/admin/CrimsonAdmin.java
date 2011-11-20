@@ -27,6 +27,7 @@ public class CrimsonAdmin extends JavaPlugin {
         commands.put("forceload", new CommandForceLoad());
         commands.put("forcesave", new CommandForceReload());
         commands.put("forcesave", new CommandForceSave());
+        commands.put("getpos", new CommandGetPos());
         commands.put("gimme", new CommandGimme());
         commands.put("item", new CommandItem());
         commands.put("teleport", new CommandTeleport());
