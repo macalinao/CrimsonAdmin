@@ -1,4 +1,4 @@
-main: com.crimsonrpg.core.Crimson
+main: com.crimsonrpg.admin.CrimsonAdmin
 
 name: CrimsonAdmin
 version: 0.0.1
