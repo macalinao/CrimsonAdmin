@@ -1,0 +1,49 @@
+main: com.crimsonrpg.core.Crimson
+
+name: CrimsonAdmin
+version: 0.0.1
+description: Admin commands for CrimsonRPG.
+
+authors: [AlbireoX, KillerSmurf]
+website: http://crimsonrpg.com/
+depend: [CrimsonCore]
+
+commands:
+  bring:
+    description: brings a player to you.
+    usage: /bring <target>
+    aliases: br
+    
+  fakegamemode:
+    description: Fakes a game mode change.
+    usage: /fakegamemode <target>
+    aliases: fakegm
+  
+  forceload:
+    description: Forces loading of all crimson-related things.
+    usage: /forceload
+    aliases: fload
+  
+  forcereload:
+    description: Forces reloading of all crimson-related things.
+    usage: /forcereload
+    aliases: freload
+  
+  forcesave:
+    description: Forces saving of all crimson-related things.
+    usage: /forcesave
+    aliases: fsave
+  
+  gimme:
+    description: Gives the sender of the command as much money as desired.
+    usage: /gimme <money>
+    
+  item:
+    description: spawns an item
+    usage: /item material
+    aliases: [i, it, item]
+    
+  teleport:
+    description: teleports a player to a player.
+    usage: /teleport <target> or <target> <target>
+    aliases: tp
