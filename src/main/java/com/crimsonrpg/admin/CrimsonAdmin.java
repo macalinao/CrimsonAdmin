@@ -4,11 +4,13 @@
  */
 package com.crimsonrpg.admin;
 
-import com.crimsonrpg.admin.commands.*;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
 import java.util.HashMap;
 import java.util.logging.Logger;
+
 import org.bukkit.plugin.java.JavaPlugin;
+
+import com.crimsonrpg.admin.commands.*;
+import com.crimsonrpg.coreapi.util.CrimsonCommand;
 
 /**
  * The CrimsonAdmin plugin.
