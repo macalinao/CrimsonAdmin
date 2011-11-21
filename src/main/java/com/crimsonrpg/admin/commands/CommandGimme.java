@@ -4,7 +4,6 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.core.Crimson;
 import com.crimsonrpg.coreapi.citizen.Citizen;
 import com.crimsonrpg.coreapi.citizen.attribute.AttributeMoney;
 import com.crimsonrpg.coreapi.util.CrimsonCommand;
