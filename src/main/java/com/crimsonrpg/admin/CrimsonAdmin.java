@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.crimsonrpg.admin.commands.*;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
+import com.crimsonrpg.util.CrimsonCommand;
 
 /**
  * The CrimsonAdmin plugin.

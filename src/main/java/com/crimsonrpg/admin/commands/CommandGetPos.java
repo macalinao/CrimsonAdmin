@@ -13,7 +13,7 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 import com.crimsonrpg.citizens.api.Citizen;
 import com.crimsonrpg.citizens.api.CitizenAPI;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
+import com.crimsonrpg.util.CrimsonCommand;
 
 /**
  * Gets the player's position.

@@ -6,7 +6,7 @@ package com.crimsonrpg.admin.commands;
 
 import com.crimsonrpg.citizens.api.Citizen;
 import com.crimsonrpg.citizens.api.CitizenAPI;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
+import com.crimsonrpg.util.CrimsonCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
