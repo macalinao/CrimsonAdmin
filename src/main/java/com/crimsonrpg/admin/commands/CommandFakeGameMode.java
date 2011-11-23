@@ -4,15 +4,17 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.coreapi.citizen.Citizen;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
-import com.crimsonrpg.coreapi.CrimsonManager;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.getspout.spoutapi.player.SpoutPlayer;
+
+import com.crimsonrpg.citizens.api.Citizen;
+import com.crimsonrpg.citizens.api.CitizenAPI;
+import com.crimsonrpg.coreapi.util.CrimsonCommand;
 
 /**
  * Sends a fake game mode message
@@ -25,7 +27,7 @@ public class CommandFakeGameMode extends CrimsonCommand {
             return;
         }
         
-        Citizen citizen = CrimsonManager.getCitizenManager().getCitizen((SpoutPlayer) sender);
+        Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) sender);
         
         //Check for permission to create plots
         if (!citizen.hasPermission("crimson.rank.admin")) {

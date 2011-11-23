@@ -4,17 +4,18 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.coreapi.citizen.Citizen;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
-import com.crimsonrpg.coreapi.CrimsonManager;
+
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.getspout.spoutapi.player.SpoutPlayer;
+
+import com.crimsonrpg.citizens.api.Citizen;
+import com.crimsonrpg.citizens.api.CitizenAPI;
+import com.crimsonrpg.coreapi.util.CrimsonCommand;
 
 /**
  * Item command.
@@ -26,7 +27,7 @@ public class CommandItem extends CrimsonCommand {
             return;
         }
         
-        Citizen citizen = CrimsonManager.getCitizenManager().getCitizen((SpoutPlayer) cs);
+        Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) cs);
         
         if (!citizen.hasPermission("crimson.rank.admin")) {
             citizen.sendError("You aren't allowed to use this command.");

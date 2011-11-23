@@ -4,14 +4,16 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.coreapi.CrimsonManager;
-import com.crimsonrpg.coreapi.citizen.Citizen;
-import com.crimsonrpg.coreapi.util.CrimsonCommand;
+
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.getspout.spoutapi.player.SpoutPlayer;
+
+import com.crimsonrpg.citizens.api.Citizen;
+import com.crimsonrpg.citizens.api.CitizenAPI;
+import com.crimsonrpg.coreapi.util.CrimsonCommand;
 
 /**
  * Gets the player's position.
@@ -25,7 +27,7 @@ public class CommandGetPos extends CrimsonCommand {
             return;
         }
         
-        Citizen citizen = CrimsonManager.getCitizenManager().getCitizen((SpoutPlayer) sender);
+        Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) sender);
         
         if (!citizen.hasPermission("crimson.rank.mod")) {
             citizen.sendError("You're not allowed to use this command.");

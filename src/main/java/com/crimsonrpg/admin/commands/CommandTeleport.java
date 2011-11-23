@@ -4,9 +4,9 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.coreapi.citizen.Citizen;
+import com.crimsonrpg.citizens.api.Citizen;
+import com.crimsonrpg.citizens.api.CitizenAPI;
 import com.crimsonrpg.coreapi.util.CrimsonCommand;
-import com.crimsonrpg.coreapi.CrimsonManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -23,7 +23,7 @@ public class CommandTeleport extends CrimsonCommand {
             return;
         }
         
-        Citizen citizen = CrimsonManager.getCitizenManager().getCitizen((SpoutPlayer) cs);
+        Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) cs);
         //checks if the player has entered a argument
         if (args.length < 1) {
             citizen.sendError("Please enter a name.");

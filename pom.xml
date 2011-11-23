@@ -63,5 +63,11 @@
         <version>1.0-SNAPSHOT</version>
         <type>jar</type>
     </dependency>
+    <dependency>
+        <groupId>com.crimsonrpg</groupId>
+        <artifactId>citizens</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>jar</type>
+    </dependency>
   </dependencies>
 </project>
