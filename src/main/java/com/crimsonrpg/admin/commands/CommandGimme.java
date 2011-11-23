@@ -5,7 +5,7 @@
 package com.crimsonrpg.admin.commands;
 
 import com.crimsonrpg.coreapi.citizen.Citizen;
-import com.crimsonrpg.economy.AttributeMoney;
+import com.crimsonrpg.economy.FlagMoney;
 import com.crimsonrpg.coreapi.util.CrimsonCommand;
 import com.crimsonrpg.coreapi.CrimsonManager;
 import org.bukkit.ChatColor;
@@ -39,7 +39,7 @@ public class CommandGimme extends CrimsonCommand {
         int moneyAmount = Integer.parseInt(args[0]); //TODO: Check if the number is valid
         
         
-        citizen.getAttribute(AttributeMoney.class).add(moneyAmount);
+        citizen.getFlag(FlagMoney.class).add(moneyAmount);
         citizen.sendMessage(ChatColor.GREEN + "Okay, okay, here's your " + moneyAmount + " coins!");
     }
     
