@@ -38,14 +38,6 @@ public class CrimsonAdmin extends JavaPlugin {
         
         CrimsonCommand.registerAll(commands, this);
         
-        //Create the scheduled saver
-        this.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
-
-            public void run() {
-                save();
-            }
-            
-        }, 6000L, 6000L); //6000L = 5 minutes approx
         
         LOGGER.info("[CrimsonAdmin] Plugin enabled.");
     }
@@ -61,11 +53,6 @@ public class CrimsonAdmin extends JavaPlugin {
     public void save() {
         //Start saving...
         LOGGER.info("[Crimson] Saving data...");
-        
-        CitizenAPI.getCitizenManager().save();
-        PlotAPI.getPlotManager().save();
-        
-        //TODO: clan stuff
         
         //Save complete
         LOGGER.info("[Crimson] Save complete.");
