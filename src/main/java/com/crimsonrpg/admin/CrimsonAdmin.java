@@ -59,7 +59,7 @@ public class CrimsonAdmin extends JavaPlugin {
     }
 
     public void save() {
-        //Start saving
+        //Start saving...
         LOGGER.info("[Crimson] Saving data...");
         
         CitizenAPI.getCitizenManager().save();

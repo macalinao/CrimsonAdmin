@@ -1,7 +1,7 @@
 main: com.crimsonrpg.admin.CrimsonAdmin
 
 name: CrimsonAdmin
-version: 0.0.1
+version: 1.0
 description: Admin commands for CrimsonRPG.
 
 authors: [AlbireoX, KillerSmurf]
