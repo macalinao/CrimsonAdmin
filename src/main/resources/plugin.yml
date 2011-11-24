@@ -36,10 +36,6 @@ commands:
   getpos:
     description: Gets the current position of the player.
     usage: /getpos
-  
-  gimme:
-    description: Gives the sender of the command as much money as desired.
-    usage: /gimme <money>
     
   item:
     description: spawns an item

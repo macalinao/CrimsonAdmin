@@ -4,6 +4,7 @@
  */
 package com.crimsonrpg.admin;
 
+import com.crimsonrpg.economy.commands.CommandGimme;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
@@ -32,7 +33,6 @@ public class CrimsonAdmin extends JavaPlugin {
 //        commands.put("forcesave", new CommandForceReload(this));
         commands.put("forcesave", new CommandForceSave(this));
         commands.put("getpos", new CommandGetPos());
-        commands.put("gimme", new CommandGimme());
         commands.put("item", new CommandItem());
         commands.put("teleport", new CommandTeleport());
         
