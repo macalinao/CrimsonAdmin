@@ -5,7 +5,6 @@
 package com.crimsonrpg.admin.commands;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
-import com.crimsonrpg.coreapi.CrimsonManager;
 import com.crimsonrpg.util.CrimsonCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
