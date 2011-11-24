@@ -4,6 +4,7 @@
  */
 package com.crimsonrpg.admin;
 
+import com.crimsonrpg.economy.commands.CommandGimme;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
@@ -40,7 +41,6 @@ public class CrimsonAdmin extends JavaPlugin {
 //        commands.put("forcesave", new CommandForceReload(this));
         commands.put("forcesave", new CommandForceSave(this));
         commands.put("getpos", new CommandGetPos());
-        commands.put("gimme", new CommandGimme());
         commands.put("item", new CommandItem());
         commands.put("teleport", new CommandTeleport());
         
@@ -54,14 +54,6 @@ public class CrimsonAdmin extends JavaPlugin {
         pluginManager.registerEvent(Type.PLAYER_INTERACT_ENTITY, playerListener, Priority.Normal, this);
         
         
-        //Create the scheduled saver
-        this.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
-
-            public void run() {
-                save();
-            }
-            
-        }, 6000L, 6000L); //6000L = 5 minutes approx
         
         LOGGER.info("[CrimsonAdmin] Plugin enabled.");
     }
@@ -77,11 +69,6 @@ public class CrimsonAdmin extends JavaPlugin {
     public void save() {
         //Start saving...
         LOGGER.info("[Crimson] Saving data...");
-        
-        CitizenAPI.getCitizenManager().save();
-        PlotAPI.getPlotManager().save();
-        
-        //TODO: clan stuff
         
         //Save complete
         LOGGER.info("[Crimson] Save complete.");
