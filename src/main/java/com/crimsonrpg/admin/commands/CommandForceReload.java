@@ -4,18 +4,26 @@
  */
 package com.crimsonrpg.admin.commands;
 
-import com.crimsonrpg.coreapi.CrimsonManager;
-import com.crimsonrpg.util.CrimsonCommand;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+
+import com.crimsonrpg.admin.CrimsonAdmin;
+import com.crimsonrpg.coreapi.CrimsonManager;
+import com.crimsonrpg.util.CrimsonCommand;
 
 /**
  * Forces reloading of the configuration.
  */
 public class CommandForceReload extends CrimsonCommand {
+    private CrimsonAdmin plugin;
+
+    public CommandForceReload(CrimsonAdmin plugin) {
+        this.plugin = plugin;
+    }
     @Override
     public void execute(CommandSender sender, Command cmnd, String string, String[] args) {
-        CrimsonManager.getDataManager().reload();
+        plugin.reload();
         sender.sendMessage("Crimson reloaded.");
     }
     
