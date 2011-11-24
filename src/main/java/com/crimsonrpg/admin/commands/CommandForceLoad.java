@@ -10,18 +10,13 @@ import org.bukkit.command.CommandSender;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
 import com.crimsonrpg.util.CrimsonCommand;
+import org.bukkit.Bukkit;
 
 /**
  *
  * @author ianschool
  */
 public class CommandForceLoad extends CrimsonCommand {
-    private CrimsonAdmin plugin;
-
-    public CommandForceLoad(CrimsonAdmin plugin) {
-        this.plugin = plugin;
-    }
-    
     @Override
     public void execute(CommandSender sender, Command cmnd, String string, String[] args) {
         if (!sender.hasPermission("crimson.rank.superadmin")) {
@@ -29,7 +24,7 @@ public class CommandForceLoad extends CrimsonCommand {
             return;
         }
         
-        plugin.load();
+        Bukkit.dispatchCommand(sender, "plotloadall");
         sender.sendMessage("Crimson loaded.");
     }
     

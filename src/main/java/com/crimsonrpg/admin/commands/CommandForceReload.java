@@ -10,19 +10,16 @@ import org.bukkit.command.CommandSender;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
 import com.crimsonrpg.util.CrimsonCommand;
+import org.bukkit.Bukkit;
 
 /**
  * Forces reloading of the configuration.
  */
 public class CommandForceReload extends CrimsonCommand {
-    private CrimsonAdmin plugin;
-
-    public CommandForceReload(CrimsonAdmin plugin) {
-        this.plugin = plugin;
-    }
     @Override
     public void execute(CommandSender sender, Command cmnd, String string, String[] args) {
-        plugin.reload();
+        Bukkit.dispatchCommand(sender, "forcesave");
+        Bukkit.dispatchCommand(sender, "forceload");
         sender.sendMessage("Crimson reloaded.");
     }
     
