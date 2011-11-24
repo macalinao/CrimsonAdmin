@@ -45,7 +45,7 @@ public class CrimsonAdmin extends JavaPlugin {
                 save();
             }
             
-        }, 0L, 6000L); //6000L = 5 minutes approx
+        }, 6000L, 6000L); //6000L = 5 minutes approx
         
         LOGGER.info("[CrimsonAdmin] Plugin enabled.");
     }
