@@ -6,7 +6,6 @@ description: Admin commands for CrimsonRPG.
 
 authors: [AlbireoX, KillerSmurf]
 website: http://crimsonrpg.com/
-depend: [CrimsonCore]
 
 commands:
   bring:
