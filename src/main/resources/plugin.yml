@@ -42,6 +42,11 @@ commands:
     usage: /item material
     aliases: [i, it, item]
     
+  setspawn:
+    description: sets the worlds spawn.
+    usage: /setspawn
+    aliases: [ss, sspawn, sets]
+  
   teleport:
     description: teleports a player to a player.
     usage: /teleport <target> or <target> <target>

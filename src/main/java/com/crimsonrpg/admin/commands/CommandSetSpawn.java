@@ -16,17 +16,18 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 /**
  * Teleports people.
  */
-public class CommandTeleportPosition extends CrimsonCommand {
+public class CommandSetSpawn extends CrimsonCommand {
+ 
     public void execute(CommandSender cs, Command cmnd, String string, String[] args) {
         if (!(cs instanceof Player)) {
             cs.sendMessage("This command may only be used in-game.");
             return;
         }
-        
+
         Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) cs);
         //checks if the player has entered a argument
-        if (args.length < 3) {
-            citizen.sendError("Please enter all three positions.");
+        if (args.length > 0) {
+            citizen.sendError("This requires nothing extra.");
             return;
         }
         
@@ -36,23 +37,13 @@ public class CommandTeleportPosition extends CrimsonCommand {
             return;
         }
         //creates player object.
-        SpoutPlayer player = (SpoutPlayer) citizen.getPlayer();
-            
-        int posX = 0;
-        int posY = 0;
-        int posZ = 0;
-        
-        try {
-           posX =  Integer.parseInt(args[0]);
-           posY =  Integer.parseInt(args[1]);
-           posZ =  Integer.parseInt(args[2]);
-
-        }   catch (NumberFormatException e) {
-            citizen.sendError("Numbers only. ");
-            return;
-        }
-        Location loc = new Location(citizen.getWorld(), posX, posY, posZ);
-        citizen.teleport(loc);
-        citizen.sendInfo("You have been teleported " + posX + posY + posZ + ".");
+        SpoutPlayer player = (SpoutPlayer) citizen.getPlayer();    
+        Location spawn = player.getLocation();
+        player.getWorld().setSpawnLocation(spawn.getBlockX(), spawn.getBlockY(), spawn.getBlockZ());
+        // fix the position to the center of a block
+        spawn = player.getWorld().getSpawnLocation();
+        spawn.setX(spawn.getBlockX() + 0.5);
+        spawn.setY(spawn.getBlockY());
+        spawn.setZ(spawn.getBlockZ() + 0.5);
     }
 }
