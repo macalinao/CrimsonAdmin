@@ -52,5 +52,6 @@ public class CommandTeleportPosition extends CrimsonCommand {
             return;
         }
         Location loc = new Location(citizen.getWorld(), posX, posY, posZ);
+        citizen.teleport(loc);
     }
 }
