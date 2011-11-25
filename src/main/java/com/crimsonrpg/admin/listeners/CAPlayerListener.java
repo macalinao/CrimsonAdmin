@@ -5,7 +5,6 @@
 package com.crimsonrpg.admin.listeners;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
@@ -32,14 +31,13 @@ public class CAPlayerListener extends PlayerListener{
     @Override
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
         Entity entity = event.getRightClicked();
-        SpoutPlayer player1 = (SpoutPlayer) event.getPlayer();
-        if (entity instanceof Player && player1.getItemInHand().equals(Material.FLINT)) {
-            if (!player1.hasPermission("crimson.rank.mod")) {
+        if (entity instanceof Player) {
+             final SpoutPlayer player = (SpoutPlayer) event.getPlayer();
+            if (!player.hasPermission("crimson.rank.mod")) {
                     return;
                 }
             final SpoutPlayer target = (SpoutPlayer) event.getRightClicked();
             String targetName = target.getName();
-                final SpoutPlayer player = (SpoutPlayer) event.getPlayer();
                 PopupScreen popup = new GenericPopup(); 
                 Button banButton = (Button) new GenericButton("Ban " + targetName).setWidth(200).setHeight(20); 
                 Button kickButton = (Button) new GenericButton("Kick " + targetName).setWidth(200).setHeight(20);

@@ -4,7 +4,6 @@
  */
 package com.crimsonrpg.admin;
 
-import com.crimsonrpg.economy.commands.CommandGimme;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
@@ -13,7 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.crimsonrpg.admin.commands.*;
 import com.crimsonrpg.admin.listeners.CAEntityListener;
 import com.crimsonrpg.admin.listeners.CAPlayerListener;
-import com.crimsonrpg.citizens.api.CitizenAPI;
 import com.crimsonrpg.plots.api.PlotAPI;
 import com.crimsonrpg.util.CrimsonCommand;
 import org.bukkit.Bukkit;
@@ -38,11 +36,12 @@ public class CrimsonAdmin extends JavaPlugin {
         commands.put("bring", new CommandBring());
         commands.put("fakegamemode", new CommandFakeGameMode());
         commands.put("forceload", new CommandForceLoad(this));
-//        commands.put("forcesave", new CommandForceReload(this));
+//      commands.put("forcesave", new CommandForceReload(this));
         commands.put("forcesave", new CommandForceSave(this));
         commands.put("getpos", new CommandGetPos());
         commands.put("item", new CommandItem());
         commands.put("teleport", new CommandTeleport());
+        commands.put("tpos", new CommandTeleportPosition());
         
         CrimsonCommand.registerAll(commands, this);
         EntityListener entityListener = new CAEntityListener(this);

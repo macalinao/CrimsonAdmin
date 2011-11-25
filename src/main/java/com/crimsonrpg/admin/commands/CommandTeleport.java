@@ -37,9 +37,21 @@ public class CommandTeleport extends CrimsonCommand {
         }
         //creates player object.
             SpoutPlayer player1 = (SpoutPlayer) Bukkit.getServer().getPlayer(args[0]);
+       
+        if (player1 == null) {
+            citizen.sendError("That player is offline, Or does not exist.");
+            return;
+        }
+        
         //checks if there are two arguments.    
         if (args.length == 2) {
             SpoutPlayer player2 = (SpoutPlayer) Bukkit.getServer().getPlayer(args[1]);
+            if (player2 == null) {
+                citizen.sendError("The player " + player2.getName() + " does not exist, or is offline.");
+                return;
+            } else if (player1 == null) {
+                citizen.sendError("The player " + player1.getName() + " does not exist, or is offline.");
+            }
             player1.getPlayer().teleport(player2);
             citizen.sendInfo("You teleported " + player1.getName()+ "to " + player2.getName());
             return;

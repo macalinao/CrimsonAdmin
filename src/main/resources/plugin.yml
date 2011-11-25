@@ -46,3 +46,8 @@ commands:
     description: teleports a player to a player.
     usage: /teleport <target> or <target> <target>
     aliases: tp
+    
+  tpos:
+    description: teleports the player to a position
+    usage: /teleport <x> <y> <z>
+    aliases: [tppos, telep, tps]
