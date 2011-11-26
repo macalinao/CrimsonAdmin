@@ -4,26 +4,32 @@
  */
 package com.crimsonrpg.admin.listeners;
 
-import com.crimsonrpg.admin.CrimsonAdmin;
+
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityListener;
+import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.material.CustomItem;
 import org.getspout.spoutapi.player.SpoutPlayer;
+
+import com.crimsonrpg.admin.CrimsonAdmin;
+import com.crimsonrpg.items.items.ItemAPI;
 
 /**
  *
  * @author Dylan
  */
 public class CAEntityListener extends EntityListener {
+
     private CrimsonAdmin ca;
 
     public CAEntityListener(CrimsonAdmin ca) {
         this.ca = ca;
     }
-    
+
     @Override
     public void onEntityDamage(EntityDamageEvent event) {
         if (event instanceof EntityDamageByEntityEvent) {
@@ -34,9 +40,16 @@ public class CAEntityListener extends EntityListener {
                 if (!player.hasPermission("crimson.rank.mod")) {
                     return;
                 }
-                if (entity instanceof Player && player.getItemInHand().getType().equals(Material.FLINT)) {
+
+                CustomItem banHammer = ItemAPI.getItem("ban hammer");
+                CustomItem customItem = SpoutManager.getMaterialManager().getCustomItem(player.getItemInHand());
+                if (customItem == null || !customItem.equals(banHammer)) {
+                    return;
+                }
+
+                if (entity instanceof Player) {
                     SpoutPlayer target = (SpoutPlayer) event.getEntity();
-                    target.setBanned(true); 
+                    target.setBanned(true);
                     target.kickPlayer("Teh BanHammer haz spokez!! :D");
                     event.setCancelled(true);
                 }
