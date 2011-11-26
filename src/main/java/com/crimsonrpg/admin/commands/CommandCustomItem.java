@@ -44,7 +44,7 @@ public class CommandCustomItem extends CrimsonCommand {
         }
         
         String matName = args[0];
-        CustomItem item = ItemAPI.getCrimsonItemManager().getItem(matName.replace("_", " "));
+        CustomItem item = ItemAPI.getCrimsonItemManager().getItem(matName);
         
         //Check if the item exists
         if (item == null) {
