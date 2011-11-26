@@ -34,6 +34,7 @@ public class CrimsonAdmin extends JavaPlugin {
     public void onEnable() {
         HashMap<String, CrimsonCommand> commands = new HashMap<String, CrimsonCommand>();
         commands.put("bring", new CommandBring());
+        commands.put("customitem", new CommandCustomItem());
         commands.put("fakegamemode", new CommandFakeGameMode());
         commands.put("forceload", new CommandForceLoad());
 //      commands.put("forcesave", new CommandForceReload(this));

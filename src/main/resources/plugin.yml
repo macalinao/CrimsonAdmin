@@ -42,6 +42,11 @@ commands:
     usage: /item material
     aliases: [i, it, item]
     
+  customitem:
+    description: Spawns a custom item.
+    usage: /customitem <name>
+    aliases: [citem]
+    
   setspawn:
     description: sets the worlds spawn.
     usage: /setspawn
