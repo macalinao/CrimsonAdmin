@@ -39,7 +39,7 @@ public class CAEntityListener extends EntityListener {
                     return;
                 }
 
-                CustomItem banHammer = ItemAPI.getItem("ban hammer");
+                CustomItem banHammer = ItemAPI.getCrimsonItemManager().getItem("ban hammer");
                 CustomItem customItem = SpoutManager.getMaterialManager().getCustomItem(player.getItemInHand());
                 if (customItem == null || !customItem.equals(banHammer)) {
                     return;
