@@ -4,8 +4,6 @@
  */
 package com.crimsonrpg.admin.listeners;
 
-
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
