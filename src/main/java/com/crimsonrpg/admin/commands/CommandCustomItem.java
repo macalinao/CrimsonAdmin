@@ -17,7 +17,7 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 import com.crimsonrpg.citizens.api.Citizen;
 import com.crimsonrpg.citizens.api.CitizenAPI;
 import com.crimsonrpg.citizens.api.MessageLevel;
-import com.crimsonrpg.items.items.ItemAPI;
+import com.crimsonrpg.items.api.ItemAPI;
 import com.crimsonrpg.util.CrimsonCommand;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
 

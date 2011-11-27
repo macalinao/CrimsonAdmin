@@ -14,7 +14,7 @@ import org.getspout.spoutapi.material.CustomItem;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
-import com.crimsonrpg.items.items.ItemAPI;
+import com.crimsonrpg.items.api.ItemAPI;
 
 /**
  *
