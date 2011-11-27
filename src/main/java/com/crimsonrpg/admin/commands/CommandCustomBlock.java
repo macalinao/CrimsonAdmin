@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.getspout.spoutapi.material.CustomItem;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 import com.crimsonrpg.citizens.api.Citizen;
@@ -19,11 +18,12 @@ import com.crimsonrpg.citizens.api.MessageLevel;
 import com.crimsonrpg.items.api.ItemAPI;
 import com.crimsonrpg.util.CrimsonCommand;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
+import org.getspout.spoutapi.material.CustomBlock;
 
 /**
  * Item command.
  */
-public class CommandCustomItem extends CrimsonCommand {
+public class CommandCustomBlock extends CrimsonCommand {
     public void execute(CommandSender cs, Command cmnd, String string, String[] args) {
         if (!(cs instanceof Player)) {
             cs.sendMessage("This command may only be used in-game.");
@@ -43,11 +43,11 @@ public class CommandCustomItem extends CrimsonCommand {
         }
         
         String matName = args[0];
-        CustomItem item = ItemAPI.getCrimsonItemManager().getItem(matName);
+        CustomBlock block = ItemAPI.getCrimsonBlockManager().getBlock(matName);
         
-        //Check if the item exists
-        if (item == null) {
-            citizen.sendMessage("That item does not exist.", MessageLevel.ERROR);
+        //Check if the block exists
+        if (block == null) {
+            citizen.sendMessage("That block does not exist.", MessageLevel.ERROR);
             return;
         }
         
@@ -59,7 +59,7 @@ public class CommandCustomItem extends CrimsonCommand {
             try {
                 amount = Integer.parseInt(args[1]);
             } catch (NumberFormatException e) {
-                citizen.sendError("'" + args[1] + "' is not a valid item.");
+                citizen.sendError("'" + args[1] + "' is not a valid block.");
                 return;
             }
         }
@@ -73,10 +73,10 @@ public class CommandCustomItem extends CrimsonCommand {
                 if (inventory.firstEmpty() < 0) break;
             }
         } else {
-            ItemStack stack = new SpoutItemStack(item, amount);
+            ItemStack stack = new SpoutItemStack(block, amount);
             citizen.getPlayer().getInventory().addItem(stack);
         }
         
-        citizen.sendInfo("You have been given " + amount + " " + item.getFullName() + ".");
+        citizen.sendInfo("You have been given " + amount + " " + block.getFullName() + ".");
     } 
 }

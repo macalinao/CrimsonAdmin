@@ -47,6 +47,11 @@ commands:
     usage: /customitem <name>
     aliases: [citem]
     
+  customblock:
+    description: Spawns a custom block.
+    usage: /customblock <name>
+    aliases: [cblock, customb, cb]
+    
   setspawn:
     description: sets the worlds spawn.
     usage: /setspawn
