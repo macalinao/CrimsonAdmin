@@ -57,10 +57,10 @@ commands:
     usage: /setspawn
     aliases: [ss, sspawn, sets]
   
-  spawn:
-    description: teleports to the spawn
-    usage: /spawn
-    aliases: [sp, spaw]
+#  spawn:
+#    description: teleports to the spawn
+#    usage: /spawn
+#    aliases: [sp, spaw]
   
   teleport:
     description: teleports a player to a player.
