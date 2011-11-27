@@ -65,7 +65,7 @@ public class CAEntityListener extends EntityListener {
 
         target.setBanned(true);
         event.setCancelled(true);
-        target.setVelocity(new Vector(0, 10, 0));
+        target.setVelocity(new Vector(0, 2, 0));
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(ca, new Runnable() {
 
