@@ -61,11 +61,11 @@ public class CAEntityListener extends EntityListener {
 
         final SpoutPlayer target = (SpoutPlayer) event.getEntity();
         Location loc = new Location(target.getWorld(), target.getLocation().getBlockX(), target.getLocation().getBlockY(), target.getLocation().getBlockZ());
-        SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audio/audiobanhammer.ogg", true, loc);
+        SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audio/banhammer.ogg", true, loc);
 
         target.setBanned(true);
         event.setCancelled(true);
-        target.setVelocity(new Vector(0, 10, 0));
+        target.setVelocity(new Vector(0, 2, 0));
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(ca, new Runnable() {
 
