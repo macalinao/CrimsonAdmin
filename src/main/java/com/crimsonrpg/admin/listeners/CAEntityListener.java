@@ -49,7 +49,7 @@ public class CAEntityListener extends EntityListener {
                 if (entity instanceof Player) {
                     SpoutPlayer target = (SpoutPlayer) event.getEntity();
                     Location loc = new Location(target.getWorld(), target.getLocation().getBlockX(), target.getLocation().getBlockY(), target.getLocation().getBlockZ());
-                    SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audio/BanHammerAudio.ogg", true, loc);
+                    SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audio/audiobanhammer.ogg", true, loc);
                     target.setBanned(true);
                     target.kickPlayer("Teh BanHammer haz spokez!! :D");
                     event.setCancelled(true);
