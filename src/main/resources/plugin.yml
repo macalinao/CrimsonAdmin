@@ -13,6 +13,11 @@ commands:
     description: clears a player's inventory.
     usage: /clear <target>
     aliases: [cli, cleari, cinventory, clear]
+    
+  sun:
+    description: sets the sun to brightness.
+    usage: /sun
+    aliases: [sunny, sunner]
   
   bring:
     description: brings a player to you.
