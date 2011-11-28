@@ -30,7 +30,7 @@ public class CommandClear extends CrimsonCommand {
         }
         Citizen citizen = CitizenAPI.getCitizenManager().getCitizen((SpoutPlayer) sender);
         
-        if (citizen.hasPermission("crimson.rank.admin")) {
+        if (!citizen.hasPermission("crimson.rank.admin")) {
             citizen.sendMessage("You don't have permission to use this command.", MessageLevel.ERROR);
             return;
         }

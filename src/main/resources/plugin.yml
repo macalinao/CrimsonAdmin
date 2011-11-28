@@ -12,7 +12,7 @@ commands:
   clearinventory:
     description: clears a player's inventory.
     usage: /clear <target>
-    aliases: [cli, cleari, cinventory]
+    aliases: [cli, cleari, cinventory, clear]
   
   bring:
     description: brings a player to you.
