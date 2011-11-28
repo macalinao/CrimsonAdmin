@@ -51,6 +51,7 @@ public class CommandTeleport extends CrimsonCommand {
                 return;
             } else if (player1 == null) {
                 citizen.sendError("The player " + player1.getName() + " does not exist, or is offline.");
+                return;
             }
             player1.getPlayer().teleport(player2);
             citizen.sendInfo("You teleported " + player1.getName()+ "to " + player2.getName());

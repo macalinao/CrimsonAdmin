@@ -8,6 +8,12 @@ authors: [AlbireoX, KillerSmurf]
 website: http://crimsonrpg.com/
 
 commands:
+  
+  clearinventory:
+    description: clears a player's inventory.
+    usage: /clear <target>
+    aliases: [cli, cleari, cinventory]
+  
   bring:
     description: brings a player to you.
     usage: /bring <target>
