@@ -12,6 +12,7 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 import com.crimsonrpg.citizens.api.Citizen;
 import com.crimsonrpg.citizens.api.CitizenAPI;
 import com.crimsonrpg.util.CrimsonCommand;
+import org.bukkit.Bukkit;
 
 /**
  * @author Dylan
@@ -33,9 +34,10 @@ public class CommandSun extends CrimsonCommand {
         if (!citizen.hasPermission("crimson.rank.admin")) {
             citizen.sendError("You do not have permission to use this command.");
             return;
-        }
+        } 
            citizen.getWorld().setStorm(false);
            citizen.getWorld().setThundering(false);
            citizen.getWorld().setThundering(false);
+           Bukkit.broadcastMessage(citizen.getName() + " is awesome, and has stopped a storm on " + citizen.getWorld().getName() + ".");
     }
 }

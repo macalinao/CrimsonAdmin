@@ -13,6 +13,7 @@ import org.bukkit.inventory.Inventory;
 
 import com.crimsonrpg.util.CrimsonCommand;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
@@ -47,12 +48,15 @@ public class CommandClear extends CrimsonCommand {
             for (int i = 0; i <= 39; i++) {
                 inventory.setItem(i, null);
             }
+            citizen.sendMessage("You have cleared " + player.getName() + "'s inventory.", MessageLevel.INFO);
+            player.sendMessage(ChatColor.YELLOW + "Your inventory has been cleared.");
             return;
         } else if (args.length < 1) {
             Inventory inventory = citizen.getInventory();
             for (int i = 0; i <= 39; i++) {
                 inventory.setItem(i, null);     
             }
+            citizen.sendMessage("You inventory has been cleared.", MessageLevel.INFO);
             return;
         }  
     }
