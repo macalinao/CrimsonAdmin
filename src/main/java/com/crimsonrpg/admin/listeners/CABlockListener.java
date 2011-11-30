@@ -38,7 +38,7 @@ public class CABlockListener extends BlockListener {
         
         if (customItem.equals(banHammer)) {
             Location loc = new Location(event.getBlock().getWorld(), event.getBlock().getLocation().getBlockX(), event.getBlock().getLocation().getBlockY(), event.getBlock().getLocation().getBlockZ()); 
-            SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audio/banhammer.ogg", true, loc);
+            SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audios/banhammer.ogg", true, loc);
             event.setCancelled(true);
         }
     }

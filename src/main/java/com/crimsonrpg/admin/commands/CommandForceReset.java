@@ -12,7 +12,7 @@ import com.crimsonrpg.admin.CrimsonAdmin;
 import com.crimsonrpg.util.CrimsonCommand;
 
 /**
- * Resets everything. VERY dangerous. And volatile.
+ * Resets everything. VERY dangerous. And volatile.s
  */
 public class CommandForceReset extends CrimsonCommand {
     private CrimsonAdmin plugin;

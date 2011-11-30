@@ -50,6 +50,7 @@ public class CrimsonAdmin extends JavaPlugin {
         commands.put("customblock", new CommandCustomBlock());
         commands.put("clearinventory", new CommandClear());
         commands.put("sun", new CommandSun());
+        commands.put("help", new CommandHelp());
         
         CrimsonCommand.registerAll(commands, this);
         EntityListener entityListener = new CAEntityListener(this);
