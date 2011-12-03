@@ -43,7 +43,9 @@
 		<dependency>
 			<groupId>org.getspout</groupId>
 			<artifactId>spoutapi</artifactId>
-			<version>dev-SNAPSHOT</version>
+			<version>dev-20111203.190022-2</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>
