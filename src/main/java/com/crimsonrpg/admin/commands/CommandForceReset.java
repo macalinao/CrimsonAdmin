@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 
 import com.crimsonrpg.admin.CrimsonAdmin;
 import com.crimsonrpg.util.CrimsonCommand;
+import org.bukkit.Bukkit;
 
 /**
  * Resets everything. VERY dangerous. And volatile.
@@ -22,7 +23,8 @@ public class CommandForceReset extends CrimsonCommand {
     }
     @Override
     public void execute(CommandSender sender, Command cmnd, String string, String[] args) {
-        plugin.reset();
+        Bukkit.dispatchCommand(sender, "forcesave");
+        Bukkit.dispatchCommand(sender, "forceload");
     }
     
     

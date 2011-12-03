@@ -67,29 +67,4 @@ public class CrimsonAdmin extends JavaPlugin {
         
                 LOGGER.info("[CrimsonAdmin] Plugin enabled.");
     }
-    
-    
-    public void load() {
-        LOGGER.info("[Crimson] Loading data...");
-        this.reloadConfig();
-        
-        PlotAPI.getPlotManager().load();
-    }
-
-    public void save() {
-        //Start saving...
-        LOGGER.info("[Crimson] Saving data...");
-        
-        //Save complete
-        LOGGER.info("[Crimson] Save complete.");
-    }
-
-    public void reset() {
-        //TODO: this
-    }
-    
-    public void reload() {
-        save();
-        load();
-    }
 }
