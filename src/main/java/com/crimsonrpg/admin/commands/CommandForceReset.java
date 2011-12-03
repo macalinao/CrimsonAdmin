@@ -13,7 +13,7 @@ import com.crimsonrpg.util.CrimsonCommand;
 import org.bukkit.Bukkit;
 
 /**
- * Resets everything. VERY dangerous. And volatile.
+ * Resets everything. VERY dangerous. And volatile.s
  */
 public class CommandForceReset extends CrimsonCommand {
     private CrimsonAdmin plugin;

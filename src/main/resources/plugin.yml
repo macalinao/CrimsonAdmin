@@ -14,6 +14,10 @@ commands:
     usage: /clear <target>
     aliases: [cli, cleari, cinventory, clear]
     
+  help:
+    description: helps a player
+    usage: /help
+    
   sun:
     description: sets the sun to brightness.
     usage: /sun
