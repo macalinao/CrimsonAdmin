@@ -36,7 +36,7 @@ public class CommandTeleportPosition extends CrimsonCommand {
             return;
         }
         //creates player object.
-        SpoutPlayer player = (SpoutPlayer) citizen.getPlayer();
+        SpoutPlayer player = (SpoutPlayer) citizen.getBukkitEntity();
             
         int posX = 0;
         int posY = 0;
@@ -51,8 +51,8 @@ public class CommandTeleportPosition extends CrimsonCommand {
             citizen.sendError("Numbers only. ");
             return;
         }
-        Location loc = new Location(citizen.getWorld(), posX, posY, posZ);
-        citizen.teleport(loc);
+        Location loc = new Location(citizen.getBukkitEntity().getWorld(), posX, posY, posZ);
+        citizen.getBukkitEntity().teleport(loc);
         citizen.sendInfo("You have been teleported " + posX + posY + posZ + ".");
     }
 }

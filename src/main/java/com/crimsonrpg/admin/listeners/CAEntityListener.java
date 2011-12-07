@@ -17,6 +17,8 @@ import com.crimsonrpg.admin.CrimsonAdmin;
 import com.crimsonrpg.items.api.ItemAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.util.Vector;
+import org.getspout.spoutapi.inventory.SpoutItemStack;
+import org.getspout.spoutapi.material.Material;
 
 /**
  *
@@ -53,8 +55,8 @@ public class CAEntityListener extends EntityListener {
 		}
 
 		CustomItem banHammer = ItemAPI.getCrimsonItemManager().getItem("ban_hammer");
-		CustomItem customItem = SpoutManager.getMaterialManager().getCustomItem(player.getItemInHand());
-		if (customItem == null || !customItem.equals(banHammer)) {
+		Material item = ((SpoutItemStack) player.getItemInHand()).getMaterial();
+		if (item == null || !item.equals(banHammer)) {
 			return;
 		}
 

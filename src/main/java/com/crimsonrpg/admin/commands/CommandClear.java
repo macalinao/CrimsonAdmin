@@ -52,7 +52,7 @@ public class CommandClear extends CrimsonCommand {
             player.sendMessage(ChatColor.YELLOW + "Your inventory has been cleared.");
             return;
         } else if (args.length < 1) {
-            Inventory inventory = citizen.getInventory();
+            Inventory inventory = citizen.getBukkitEntity().getInventory();
             for (int i = 0; i <= 39; i++) {
                 inventory.setItem(i, null);     
             }

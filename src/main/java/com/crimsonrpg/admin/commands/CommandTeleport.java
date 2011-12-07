@@ -58,7 +58,7 @@ public class CommandTeleport extends CrimsonCommand {
             return;
         //if there isn't two arguments checks if there is one :D 
         } else if (args.length == 1) {
-            citizen.getPlayer().teleport(player1);
+            citizen.getBukkitEntity().teleport(player1);
             citizen.sendInfo("You have been teleported to " + player1.getName());
         }   
     }

@@ -10,7 +10,9 @@ import org.bukkit.Location;
 import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.event.block.BlockListener;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.material.CustomItem;
+import org.getspout.spoutapi.material.Material;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 /**
@@ -29,14 +31,14 @@ public class CABlockListener extends BlockListener {
     public void onBlockDamage(BlockDamageEvent event) {
         SpoutPlayer player = (SpoutPlayer) event.getPlayer();
         CustomItem banHammer = ItemAPI.getCrimsonItemManager().getItem("ban_hammer");
-        CustomItem customItem = SpoutManager.getMaterialManager().getCustomItem(player.getItemInHand());
+        Material item = ((SpoutItemStack) player.getItemInHand()).getMaterial();
         
         
-        if (customItem == null || !customItem.equals(banHammer)) {
+        if (item == null || !item.equals(banHammer)) {
             return;
         }
         
-        if (customItem.equals(banHammer)) {
+        if (item.equals(banHammer)) {
             Location loc = new Location(event.getBlock().getWorld(), event.getBlock().getLocation().getBlockX(), event.getBlock().getLocation().getBlockY(), event.getBlock().getLocation().getBlockZ()); 
             SpoutManager.getSoundManager().playGlobalCustomSoundEffect(ca, "http://resources.crimsonrpg.com/s/audios/banhammer.ogg", true, loc);
             event.setCancelled(true);

@@ -37,7 +37,7 @@ public class CommandSetSpawn extends CrimsonCommand {
             return;
         }
         //creates player object.
-        SpoutPlayer player = (SpoutPlayer) citizen.getPlayer();    
+        SpoutPlayer player = (SpoutPlayer) citizen.getBukkitEntity();    
         Location spawn = player.getLocation();
         player.getWorld().setSpawnLocation(spawn.getBlockX(), spawn.getBlockY(), spawn.getBlockZ());
         // fix the position to the center of a block

@@ -68,7 +68,7 @@ public class CommandItem extends CrimsonCommand {
             }
         }
         
-        PlayerInventory inventory = citizen.getPlayer().getInventory();
+        PlayerInventory inventory = citizen.getBukkitEntity().getInventory();
         
         //Check if the amount is greater than 64
         if (amount > 64) {
@@ -77,7 +77,7 @@ public class CommandItem extends CrimsonCommand {
                 if (inventory.firstEmpty() < 0) break;
             }
         } else {
-            citizen.getPlayer().getInventory().addItem(new ItemStack(mat, amount));
+            citizen.getBukkitEntity().getInventory().addItem(new ItemStack(mat, amount));
         }
         
         citizen.sendInfo("You have been given " + amount + " " + mat.name() + ".");

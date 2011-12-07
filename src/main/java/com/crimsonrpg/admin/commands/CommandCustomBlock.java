@@ -64,7 +64,7 @@ public class CommandCustomBlock extends CrimsonCommand {
             }
         }
         
-        PlayerInventory inventory = citizen.getPlayer().getInventory();
+        PlayerInventory inventory = citizen.getBukkitEntity().getInventory();
         
         //Check if the amount is greater than 64
         if (amount > 64) {
@@ -74,7 +74,7 @@ public class CommandCustomBlock extends CrimsonCommand {
             }
         } else {
             ItemStack stack = new SpoutItemStack(block, amount);
-            citizen.getPlayer().getInventory().addItem(stack);
+            citizen.getBukkitEntity().getInventory().addItem(stack);
         }
         
         citizen.sendInfo("You have been given " + amount + " " + block.getFullName() + ".");

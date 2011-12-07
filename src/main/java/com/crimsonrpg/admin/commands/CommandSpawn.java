@@ -32,7 +32,7 @@ public class CommandSpawn extends CrimsonCommand {
         }
         
         //creates player object.
-        SpoutPlayer player = (SpoutPlayer) citizen.getPlayer();    
+        SpoutPlayer player = (SpoutPlayer) citizen.getBukkitEntity();    
         Location spawn = player.getWorld().getSpawnLocation();
         player.teleport(spawn);
 

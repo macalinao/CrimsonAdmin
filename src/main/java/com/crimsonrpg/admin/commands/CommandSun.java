@@ -35,9 +35,9 @@ public class CommandSun extends CrimsonCommand {
             citizen.sendError("You do not have permission to use this command.");
             return;
         } 
-           citizen.getWorld().setStorm(false);
-           citizen.getWorld().setThundering(false);
-           citizen.getWorld().setThundering(false);
-           Bukkit.broadcastMessage(citizen.getName() + " is awesome, and has stopped a storm on " + citizen.getWorld().getName() + ".");
+           citizen.getBukkitEntity().getWorld().setStorm(false);
+           citizen.getBukkitEntity().getWorld().setThundering(false);
+           citizen.getBukkitEntity().getWorld().setThundering(false);
+           Bukkit.broadcastMessage(citizen.getName() + " is awesome, and has stopped a storm on " + citizen.getBukkitEntity().getWorld().getName() + ".");
     }
 }
