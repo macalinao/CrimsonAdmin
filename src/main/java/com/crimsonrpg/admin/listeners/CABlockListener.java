@@ -31,7 +31,7 @@ public class CABlockListener extends BlockListener {
     public void onBlockDamage(BlockDamageEvent event) {
         SpoutPlayer player = (SpoutPlayer) event.getPlayer();
         CustomItem banHammer = ItemAPI.getCrimsonItemManager().getItem("ban_hammer");
-        Material item = ((SpoutItemStack) player.getItemInHand()).getMaterial();
+        Material item = new SpoutItemStack(player.getItemInHand()).getMaterial();
         
         
         if (item == null || !item.equals(banHammer)) {
